@@ -1,0 +1,31 @@
+public class YourActivity extends Activity {
+
+  Vector<String> choices = new Vector<String>();
+
+  public void onCreate(Bundle ....) {
+    (Button) myButton =  (Button) findViewById(R.id.button);
+
+    myButton.setOnClickListener(new OnClickListener() {
+        @Override
+        public boolean button.onClick() {
+          addString();
+          TextView textView = (TextView) findViewById(R.id.text_view);
+
+          String listRepresentation = "";
+          for (String choice : choices)
+            if ("".equals(listRepresentation))
+              listRepresentation  =       choice; else 
+              listRepresentation  = ", " +choice;
+
+          textView.setText(listRepresentation );
+        }
+     });
+  }
+
+  public void addString(View view)
+  {
+    EditText editText = (EditText) findViewById(R.id.edit_choice);
+    String message = editText.getText().toString();
+    choices.add(message);
+  }
+}
